@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Count from "./Count"
 import './App.css'
 
 function App() {
@@ -7,19 +8,19 @@ function App() {
 
   function add() {
     setCount(prevCount=> prevCount + 1)
-
   }
 
   function minus() {
     setCount(prevCount=> prevCount - 1)
   }
 
+  console.log("App rendered")
+
   return (
     <main className='container'>
-      <h1>How many times will Bob say, "state" in this section?</h1>
       <div className="counter">
         <button onClick={minus} className='minus' aria-label='Decrease count'>-</button>
-        <h2 className='count'>{count}</h2>
+        <Count number={count} />
         <button onClick={add} className='plus' aria-label='Increase count'>+</button>
       </div>
     </main>
